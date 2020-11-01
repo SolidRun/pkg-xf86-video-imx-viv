@@ -1,0 +1,27 @@
+Source: xf86-video-imx-viv
+Priority: extra
+Maintainer: Josua Mayer <josua@solid-run.com>
+Build-Depends:
+ debhelper (>= 8.0.0),
+ imx-gpu-viv-x11-dev (>= 6.4.3.p0),
+ libdrm-dev,
+ libg2d-dev,
+ lsb-release,
+ quilt,
+ xserver-xorg-dev,
+Standards-Version: 3.9.3
+Section: libs
+Vcs-Git: https://github.com/SolidRun/pkg-xf86-video-imx-viv.git
+Vcs-Browser: https://github.com/SolidRun/pkg-xf86-video-imx-viv
+
+Package: xserver-xorg-video-imx-viv
+Section: libs
+Architecture: any-arm arm64
+Depends: ${shlibs:Depends},
+ ${misc:Depends},
+ ${xviddriver:Depends},
+ imx-gpu-viv-x11 (>= 6.4.3.p0),
+Provides:
+ ${xviddriver:Provides},
+Description: Vivante X.org driver
+ Provides the accelerated X.org driver for i.MX6&8 SoCs by Vivante/FSL.
